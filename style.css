@@ -5,3 +5,7 @@ Dark mode
     background-color: #1f1f1f;
     color: #dddddd;
 }
+
+#content {
+    padding-left:1%;
+}
