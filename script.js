@@ -40,7 +40,6 @@ function loadlasttheme() {
 function changetheme(type) {
     if (type == "dark") {
         if (theme == "light") {
-            localStorage.setItem("lasttheme", "dark")
             document.getElementsByTagName("html")[0].classList.add("dark-mode")
             document.getElementsByTagName("body")[0].classList.add("dark-mode")
             document.getElementById("themeknap").textContent = "Light theme"
@@ -51,7 +50,6 @@ function changetheme(type) {
         }
     } else {
         if (theme == "dark") {
-            localStorage.setItem("lasttheme", "light")
             document.getElementsByTagName("html")[0].classList.remove("dark-mode")
             document.getElementsByTagName("body")[0].classList.remove("dark-mode")
             document.getElementById("themeknap").textContent = "Dark theme"
@@ -64,8 +62,14 @@ function changetheme(type) {
     }
 }
 function fliptheme() {
-    if (theme == "light") { changetheme("dark") }
-    else { changetheme("light") }
+    if (theme == "light") { 
+        changetheme("dark") 
+        localStorage.setItem("lasttheme", "dark")
+}
+    else { 
+        changetheme("light") 
+        localStorage.setItem("lasttheme", "light")
+    }
 }
 
 //Andet stuff
