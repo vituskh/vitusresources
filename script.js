@@ -13,7 +13,7 @@ var head = document.getElementsByTagName("HEAD")[0]
     var link = document.createElement("link")
     link.rel = "stylesheet"
     link.type = "text/css"
-    link.href = "./style.css"
+    link.href = "https://vitusverden.github.io/vitusresources/style.css"
     head.appendChild(link)
 }
 //Fontawesome (ikke længere brugt)
