@@ -72,7 +72,7 @@ function fliptheme() {
 scrollTo(0, 0)
 
 //On load
-window.onload = (event) => {
+window.addEventListener('load', (event) => {
     loadnavbar()
     loadlasttheme()
-}
+  });
