@@ -1,3 +1,5 @@
+//Version 1.1.1
+
 //Load andet CSS og JS
 var head = document.getElementsByTagName("HEAD")[0]
 //Bulma
