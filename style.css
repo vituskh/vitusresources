@@ -6,6 +6,6 @@ Dark mode
     color: #dddddd;
 }
 
-body {
+.has-navbar-fixed-top {
     padding-left:1%;
 }

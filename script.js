@@ -1,6 +1,6 @@
-//Version 1.1.1
+//Version 1.2
 
-//Load andet CSS og JS
+//Load CSS
 var head = document.getElementsByTagName("HEAD")[0]
 //Bulma
 {
@@ -18,20 +18,27 @@ var head = document.getElementsByTagName("HEAD")[0]
     link.href = "https://vitusverden.github.io/vitusresources/style.css"
     head.appendChild(link)
 }
-//Fontawesome (ikke længere brugt)
-/*{
-    var script = document.createElement("script")
-    script.src = "https://kit.fontawesome.com/7079259d72.js"
-    head.appendChild(script)
-}*/
-
 
 //Lav navbaren
 function loadnavbar() {
-    var temp = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"><nav class="navbar is-light is-fixed-top" id="navbar" role="navigation" aria-label="main navigation"> <div class="navbar-menu is-active"> <div class="navbar-start"><a class="navbar-item" href="https://vitusverden.github.io">Hjem</a> <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link">Vitus\' random stuff</a> <div class="navbar-dropdown"><a class="navbar-item" href="https://vitusverden.github.io/citater">Citatlisten</a><a class="navbar-item" href="https://vitusverden.github.io/minmaxing-spil">Minmaxing spil</a><a class="navbar-item" href="https://vitusverden.github.io/mcmaterialer">Antal til mc stacks</a><a class="navbar-item" href="https://vitusverden.github.io/primefactoring">Primtalsfaktorisering</a><a class="navbar-item" href="https://vitusverden.github.io/emilsnavn">Hvad hedder Emil i dag?</a> </div> </div> <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link">Vitus\' rollespils stuff</a> <div class="navbar-dropdown"><a class="navbar-item" href="https://vitusverden.github.io/erderrollespil">Er der rollespil idag?</a><a class="navbar-item" href="https://vitusverden.github.io/wfrpcareers">WFRP Career system</a><a class="navbar-item" href="https://vitusverden.github.io/rollespilsperception">Slå perception i WFRP nemt</a><a class="navbar-item" href="https://vitusverden.github.io/odds">WFRP magi odds</a> </div> </div> </div> <div class="navbar-end"> <div class="navbar-item"> <div class="buttons"><a id="themeknap" class="button is-light" onclick="fliptheme()">Dark theme</a> </div> </div> </div> </div> </nav><br>'
-    document.getElementsByTagName("body")[0].classList.add("has-navbar-fixed-top")
-    document.getElementsByTagName("head")[0].outerHTML += temp
+    var temp = '<nav id="navbar" class="navbar is-light" role="navigation" aria-label="main navigation"> <div class="navbar-brand"> <a class="navbar-item" href="https://vitusverden.github.io"> Hjem </a> <a role="button" onclick="toggleNavbar()" id="navbar-burger" class="navbar-burger" aria-label="menu" aria-expanded="false"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span aria-hidden="true"></span> </a> </div> <div id="navbar-menu" class="navbar-menu"> <div class="navbar-start"> <div class="navbar-item has-dropdown is-hoverable"> <a class="navbar-link"> Vitus\' random stuff </a> <div class="navbar-dropdown"> <a class="navbar-item" href="https://vitusverden.github.io/citater">Citatlisten</a> <a class="navbar-item" href="https://vitusverden.github.io/minmaxing-spil">Minmaxing spil</a> <a class="navbar-item" href="https://vitusverden.github.io/mcmaterialer">Antal til mc stacks</a> <a class="navbar-item" href="https://vitusverden.github.io/primefactoring">Primtalsfaktorisering</a> <a class="navbar-item" href="https://vitusverden.github.io/emilsnavn">Hvad hedder Emil i dag?</a> </div> </div> <div class="navbar-item has-dropdown is-hoverable"> <a class="navbar-link"> Vitus\' rollespils stuff </a> <div class="navbar-dropdown"> <a class="navbar-item" href="https://vitusverden.github.io/erderrollespil">Er der rollespil idag?</a> <a class="navbar-item" href="https://vitusverden.github.io/wfrpcareers">WFRP Career system</a> <a class="navbar-item" href="https://vitusverden.github.io/rollespilsperception">Slå perception i WFRP nemt</a> <a class="navbar-item" href="https://vitusverden.github.io/odds">WFRP magi odds</a> </div> </div> </div> </div> </nav><br>'
+    var temp2 = "<section>" + temp + "</section>" + "<section class='has-navbar-fixed-top'>" + document.getElementsByTagName("body")[0].innerHTML + "</section>"
+     
+    document.getElementsByTagName("body")[0].innerHTML = temp2
 };
+
+//Navbar funktion til at få mobilversionen til at virke
+function toggleNavbar() {
+    if(document.getElementById("navbar").classList.contains("is-active")) {
+        document.getElementById("navbar").classList.remove("is-active")
+        document.getElementById("navbar-burger").classList.remove("is-active")
+        document.getElementById("navbar-menu").classList.remove("is-active")
+    } else {
+        document.getElementById("navbar").classList.add("is-active")
+        document.getElementById("navbar-burger").classList.add("is-active")
+        document.getElementById("navbar-menu").classList.add("is-active")
+    }
+}
 
 //Dark & light theme
 var theme = "light"
