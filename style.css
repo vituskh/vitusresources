@@ -9,3 +9,8 @@ Dark mode
 .has-navbar-fixed-top {
     padding-left:1%;
 }
+
+#themeknap {
+    padding: .5rem 0.75rem;
+    margin: .4rem
+}

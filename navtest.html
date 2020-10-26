@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        
-    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 <!--
@@ -47,12 +45,14 @@
             <a class="navbar-item" href="https://vitusverden.github.io">
                 Hjem
             </a>
-
+            
+            <button class="button" id="themeknap" onclick="fliptheme()">Dark mode</button>
             <a role="button" onclick="toggleNavbar()" id="navbar-burger" class="navbar-burger" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
               </a>
+              
         </div>
 
         <div id="navbar-menu" class="navbar-menu">
@@ -87,9 +87,11 @@
 
                 
             </div>
-
+            
 
         </div>
+        
+        
     </nav><br>
 </body>
 
