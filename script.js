@@ -1,4 +1,4 @@
-//Version 2.2
+//Version 2.2.1
 
 //Load CSS
 var head = document.getElementsByTagName("HEAD")[0]
