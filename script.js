@@ -1,4 +1,4 @@
-//Version 2.1
+//Version 2.2
 
 //Load CSS
 var head = document.getElementsByTagName("HEAD")[0]
@@ -51,14 +51,19 @@ function loadlasttheme() {
 
 };
 function changetheme(type) {
+    elements=document.querySelectorAll("button, input")
     if (type == "dark") {
         if (theme == "light") {
             document.getElementsByTagName("html")[0].classList.add("dark-mode")
             document.getElementsByTagName("body")[0].classList.add("dark-mode")
             document.getElementById("themeknap").textContent = "Light theme"
-            document.getElementById("themeknap").classList.remove("is-light")
-            document.getElementById("themeknap").classList.add("is-dark")
             document.getElementById("navbar").classList.add("is-dark")
+            for (let i = 0; i < elements.length; i++) {
+                const element = elements[i];
+                element.classList.add("is-dark")
+                element.classList.remove("is-light")
+                
+            }
             theme = "dark"
         }
     } else {
@@ -66,9 +71,14 @@ function changetheme(type) {
             document.getElementsByTagName("html")[0].classList.remove("dark-mode")
             document.getElementsByTagName("body")[0].classList.remove("dark-mode")
             document.getElementById("themeknap").textContent = "Dark theme"
-            document.getElementById("themeknap").classList.add("is-light")
-            document.getElementById("themeknap").classList.remove("is-dark")
             document.getElementById("navbar").classList.remove("is-dark")
+
+            for (let i = 0; i < elements.length; i++) {
+                const element = elements[i];
+                element.classList.add("is-light")
+                element.classList.remove("is-dark")
+                
+            }
             theme = "light"
 
         }
