@@ -51,7 +51,7 @@ function loadlasttheme() {
 
 };
 function changetheme(type) {
-    elements=document.querySelectorAll("button, input")
+    elements=document.getElementsByTagName("*")
     if (type == "dark") {
         if (theme == "light") {
             document.getElementsByTagName("html")[0].classList.add("dark-mode")
