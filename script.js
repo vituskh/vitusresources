@@ -2,7 +2,7 @@
 var theme = "light";
 
 (function () {
-    const style = false ? "./style.css" : "https://raw.githubusercontent.com/vitusverden/vitusresources/master/style.js" //true for dev, false 
+    const style = false ? "./style.css" : "https://vitusverden.github.io/vitusresources/style.css" //true for dev, false 
 
     //Load CSS
     var head = document.getElementsByTagName("HEAD")[0]
