@@ -1,17 +1,122 @@
+header {
+	padding-bottom: 3em;
+}
+
+.vitusNav_navbar {
+	overflow: hidden;
+	background-color: var(--navColor);
+	position: fixed;
+	width:100%;
+	top:0;
+	left: 0;
+}
+.vitusNav_navbar a {
+	float: left;
+	font-size: 16px;
+	color: var(--textColor);
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+  
+.vitusNav_dropdown {
+	float: left;
+	overflow: hidden;
+	width: fit-content;
+}
+  
+.vitusNav_dropdown .vitusNav_dropbtn {
+	font-size: 16px;  
+	border: none;
+	outline: none;
+	color: var(--textColor);
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+  
+.vitusNav_navbar a:hover, .vitusNav_dropdown:hover .vitusNav_dropbtn, .vitusNav_dropbtn.vitusNav_show {
+	background-color: var(--navHoverColor);
+}
+  
+.vitusNav_dropdown-content {
+	display: none;
+	position: fixed;
+	background-color: var(--navHoverColor);
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	overflow: hidden;
+}
+  
+.vitusNav_dropdown-content a {
+	float: none;
+	color: var(--textColor);
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;	
+}
+  
+.vitusNav_dropdown-content a:hover {
+	background-color: var(--navHoverColor);
+}
+
+@media only screen and (max-width:768px) {
+	/*mobiler*/
+	.vitusNav_dropdown .vitusNav_dropdown-content.vitusNav_show {
+		display: block;
+	}
+	.vitusNav_navbar a, .vitusNav_navbar button, .vitusNav_navbar div {
+		width:100%;
+		text-align: left;
+	}
+	#vitusNav_navbar-content {
+		display:none;;
+		position: fixed;
+		top: calc(1em + 2px + 28px);
+		background: var(--navColor);
+	}
+}
+@media only screen and (min-width:769px) {
+	/*computere*/
+	.vitusNav_dropdown:hover .vitusNav_dropdown-content {
+		display: block;
+	}
+	#vitusNav_mobile-navbar-toggle {
+		display:none;
+	}
+}
+
+
+
+
 /*
 Dark mode
 */
-.dark-mode {
-    background-color: #1f1f1f;
-    color: #dddddd;
+body {
+	background-color: var(--backgroundColor);
+	color: var(--textColor);
+	min-height: 100vh;
+	margin: initial;
+	padding: initial;
+	font-weight: initial;
+	line-height: initial;
+	font-family: initial;
 }
 
-.has-navbar-fixed-top {
-    padding-left:1%;
+/*.vitusNav_has-navbar_content-fixed-top {
+	padding-left:1vw;
+}*/
+
+#vitusNav_themeknap {
+	padding: 0.5rem 0.75rem;
+	margin: 0.4rem
 }
 
-#themeknap {
-    padding: .5rem 0.75rem;
-    margin: .4rem
-}
-
+:root {
+	--backgroundColor: #333;
+	--textColor: #fff;
+	--navColor: #444;
+	--navHoverColor: #2f2f2f
+  }
