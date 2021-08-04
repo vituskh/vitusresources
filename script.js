@@ -1,105 +1,157 @@
 //Version 2.2.1
+var theme = "light";
 
-//Load CSS
-var head = document.getElementsByTagName("HEAD")[0]
-//Bulma
-{
-    var link = document.createElement("link")
-    link.rel = "stylesheet"
-    link.type = "text/css"
-    link.href = "https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
-    head.appendChild(link)
-}
-//Vitus CSS
-{
-    var link = document.createElement("link")
-    link.rel = "stylesheet"
-    link.type = "text/css"
-    link.href = "https://vitusverden.github.io/vitusresources/style.css"
-    head.appendChild(link)
-}
+(function () {
+    const style = false ? "./style.css" : "https://raw.githubusercontent.com/vitusverden/vitusresources/master/style.js" //true for dev, false 
 
-//Lav navbaren
-function loadnavbar() {
-    var temp = '<nav id="navbar" class="navbar is-light is-fixed-top" role="navigation" aria-label="main navigation"> <div class="navbar-brand"> <a class="navbar-item" href="https://vitusverden.github.io"> Hjem </a> <button class="button is-light" id="themeknap" onclick="fliptheme()">Dark mode</button> <a role="button" onclick="toggleNavbar()" id="navbar-burger" class="navbar-burger" aria-label="menu" aria-expanded="false"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span aria-hidden="true"></span> </a> </div> <div id="navbar-menu" class="navbar-menu"> <div class="navbar-start"> <div class="navbar-item has-dropdown is-hoverable"> <a class="navbar-link"> Vitus\' random stuff </a> <div class="navbar-dropdown"> <a class="navbar-item" href="https://vitusverden.github.io/citater">Citatlisten</a> <a class="navbar-item" href="https://vitusverden.github.io/minmaxing-spil">Minmaxing spil</a> <a class="navbar-item" href="https://vitusverden.github.io/mcmaterialer">Antal til mc stacks</a> <a class="navbar-item" href="https://vitusverden.github.io/primefactoring">Primtalsfaktorisering</a> <a class="navbar-item" href="https://vitusverden.github.io/emilsnavn">Hvad hedder Emil i dag?</a> </div> </div> <div class="navbar-item has-dropdown is-hoverable"> <a class="navbar-link"> Vitus\' rollespils stuff </a> <div class="navbar-dropdown"> <a class="navbar-item" href="https://vitusverden.github.io/erderrollespil">Er der rollespil idag?</a> <a class="navbar-item" href="https://vitusverden.github.io/wfrpcareers">WFRP Career system</a> <a class="navbar-item" href="https://vitusverden.github.io/rollespilsperception">Slå perception i WFRP nemt</a> <a class="navbar-item" href="https://vitusverden.github.io/odds">WFRP magi odds</a> </div> </div> </div> </div> </nav><br>'
-    var temp2 = temp + document.getElementsByTagName("body")[0].innerHTML
-     
-    document.getElementsByTagName("body")[0].innerHTML = temp2
-    document.getElementsByTagName("body")[0].classList.add("has-navbar-fixed-top")
-
-};
-
-//Navbar funktion til at få mobilversionen til at virke
-function toggleNavbar() {
-    if(document.getElementById("navbar").classList.contains("is-active")) {
-        document.getElementById("navbar").classList.remove("is-active")
-        document.getElementById("navbar-burger").classList.remove("is-active")
-        document.getElementById("navbar-menu").classList.remove("is-active")
-    } else {
-        document.getElementById("navbar").classList.add("is-active")
-        document.getElementById("navbar-burger").classList.add("is-active")
-        document.getElementById("navbar-menu").classList.add("is-active")
+    //Load CSS
+    var head = document.getElementsByTagName("HEAD")[0]
+    //Vitus CSS
+    {
+        var link = document.createElement("link")
+        link.rel = "stylesheet"
+        link.type = "text/css"
+        link.href = style
+        head.appendChild(link)
     }
-}
+    //Lav navbaren
+        function loadnavbar() {
+            var element = document.querySelector("header") || document.querySelector("body")
+        var toAdd = `<nav id="vitusNav_navbar" class="vitusNav_navbar" role="navigation">
+        <a role="button" id="vitusNav_mobile-navbar-toggle" aria-label="menu" aria-expanded="false">
+            Vis navigation
+          </a>
+          
+        <div id="vitusNav_navbar-content">
+            <a href="https://vitusverden.github.io">
+                Hjem
+            </a>
+            <a role="button" style="cursor:pointer" id="vitusNav_darkModeSwitch">Dark mode</a>
+            <a href="https://vitusverden.github.io/citater">Citatlisten</a>
+            <div class="vitusNav_dropdown">
+                <button id="vitusNav_dropbtn1" class="vitusNav_dropbtn">Random stuff &#9660;
+                </button>
+                <div id="vitusNav_dropcontent1" class="vitusNav_dropdown-content">
+                    <a href="https://vitusverden.github.io/minmaxing-spil">Minmaxing spil</a>
+                    <a href="https://vitusverden.github.io/mcmaterialer">Antal til mc stacks</a>
+                    <a href="https://vitusverden.github.io/primefactoring">Primtalsfaktorisering</a>
+                    <a href="https://vitusverden.github.io/emilsnavn">Hvad hedder Emil i dag?</a>
+                </div>
+            </div>
+            <div class="vitusNav_dropdown">
+                <button id="vitusNav_dropbtn2" class="vitusNav_dropbtn">Rollespil &#9660;
+                </button>
+                <div id="vitusNav_dropcontent2" class="vitusNav_dropdown-content">
+                    <a href="https://vitusverden.github.io/erderrollespil">Er der rollespil idag?</a>
+                    <a href="https://vitusverden.github.io/wfrpcareers">WFRP Career system</a>
+                    <a href="https://vitusverden.github.io/rollespilsperception">Slå perception i WFRP nemt</a>
+                    <a href="https://vitusverden.github.io/odds">WFRP magi odds</a>
+                </div>
+            </div>
+        </div>
+    </nav>`.replaceAll(/\t/g,"").trim()
+        if(document.querySelector("header")) {
+            var template = document.createElement("template")
+            template.innerHTML = toAdd
+            element.prepend(template.content.firstChild)
+        } else {
+            var header = document.createElement("header")
+            header.innerHTML = toAdd
+            element.prepend(header)
+        }
+    };
 
-//Dark & light theme
-var theme = "light"
-function loadlasttheme() {
-    if (localStorage.getItem("lasttheme") == "dark") {
-        changetheme("dark")
-    }
 
-};
-function changetheme(type) {
-    elements=document.getElementsByTagName("*")
-    if (type == "dark") {
-        if (theme == "light") {
-            document.getElementsByTagName("html")[0].classList.add("dark-mode")
-            document.getElementsByTagName("body")[0].classList.add("dark-mode")
-            document.getElementById("themeknap").textContent = "Light theme"
-            document.getElementById("navbar").classList.add("is-dark")
-            for (let i = 0; i < elements.length; i++) {
-                const element = elements[i];
-                element.classList.add("is-dark")
-                element.classList.remove("is-light")
-                
-            }
+    //Dark & light theme
+    function loadlasttheme() {
+        if (localStorage.getItem("lasttheme") == "dark") {
+            changeTheme("dark")
+        } else {
+            changeTheme("light")
+        }
+
+    };
+    function changeTheme(type) {
+        var rootElement = document.querySelector(":root")
+        if (type == "dark") {
+            rootElement.style.setProperty("--backgroundColor", "#333")
+            rootElement.style.setProperty("--textColor", "#fff")
+            rootElement.style.setProperty("--navColor", "#444")
+            rootElement.style.setProperty("--navHoverColor", "#2f2f2f")
             theme = "dark"
-        }
-    } else {
-        if (theme == "dark") {
-            document.getElementsByTagName("html")[0].classList.remove("dark-mode")
-            document.getElementsByTagName("body")[0].classList.remove("dark-mode")
-            document.getElementById("themeknap").textContent = "Dark theme"
-            document.getElementById("navbar").classList.remove("is-dark")
+            document.querySelector("#vitusNav_darkModeSwitch").textContent = "Light mode"
+            localStorage.setItem("lasttheme", "dark")
 
-            for (let i = 0; i < elements.length; i++) {
-                const element = elements[i];
-                element.classList.add("is-light")
-                element.classList.remove("is-dark")
-                
-            }
+        } else {
+            rootElement.style.setProperty("--backgroundColor", "#fff")
+            rootElement.style.setProperty("--textColor", "#1b1b1b")
+            rootElement.style.setProperty("--navColor", "#f4f4f4")
+            rootElement.style.setProperty("--navHoverColor", "#dfdfdf")
             theme = "light"
-
+            document.querySelector("#vitusNav_darkModeSwitch").textContent = "Dark mode"
+            localStorage.setItem("lasttheme", "light")
         }
     }
-}
-function fliptheme() {
-    if (theme == "light") { 
-        changetheme("dark") 
-        localStorage.setItem("lasttheme", "dark")
-}
-    else { 
-        changetheme("light") 
-        localStorage.setItem("lasttheme", "light")
-    }
-}
 
-//Andet stuff
-scrollTo(0, 0)
 
-//On load
-window.addEventListener('load', (event) => {
-    loadnavbar()
-    loadlasttheme()
-  });
+
+
+    //Andet stuff
+    scrollTo(0, 0)
+
+    //On load
+    window.addEventListener('load', async (event) => {
+        //await loadNavbar()
+        loadnavbar()
+        loadlasttheme()
+        document.querySelector("#vitusNav_darkModeSwitch").addEventListener("click", () => {
+            if (theme == "light") {
+                changeTheme("dark")
+            } else {
+                changeTheme("light")
+            }
+        })
+
+        //Mobile vis/skjul navbar
+        document.querySelector("#vitusNav_mobile-navbar-toggle").addEventListener("click", () => {
+            var content = document.querySelector("#vitusNav_navbar-content")
+
+            if(content.style.display === "block") {
+                content.style.display = "none"
+                document.querySelector("#vitusNav_mobile-navbar-toggle").textContent = "Vis navigation"
+            } else {
+                content.style.display = "block"
+                document.querySelector("#vitusNav_mobile-navbar-toggle").textContent = "Skjul navigation"
+            }
+        })
+
+
+        //Dropdowns
+        document.querySelector("#vitusNav_dropbtn1").addEventListener("click", () => {
+            document.querySelector("#vitusNav_dropcontent1").classList.toggle("vitusNav_show");
+            document.querySelector("#vitusNav_dropbtn1").classList.toggle("vitusNav_show");
+        })
+        document.querySelector("#vitusNav_dropbtn2").addEventListener("click", () => {
+            document.querySelector("#vitusNav_dropcontent2").classList.toggle("vitusNav_show");
+            document.querySelector("#vitusNav_dropbtn2").classList.toggle("vitusNav_show");
+        })
+
+        // Close the dropdown if the user clicks outside of it
+        window.addEventListener("click", (e) => {
+            if (!e.target.matches('#vitusNav_dropbtn1')) {
+                var dropdown1 = document.querySelector("#vitusNav_dropcontent1");
+                if (dropdown1.classList.contains("vitusNav_show")) {
+                    dropdown1.classList.remove("vitusNav_show");
+                    document.querySelector("#vitusNav_dropbtn1").classList.remove("vitusNav_show");
+        }
+            }
+            if (!e.target.matches('#vitusNav_dropbtn2')) {
+                var dropdown2 = document.querySelector("#vitusNav_dropcontent2");
+                if (dropdown2.classList.contains("vitusNav_show")) {
+                    dropdown2.classList.remove("vitusNav_show");
+                    document.querySelector("#vitusNav_dropbtn2").classList.remove("vitusNav_show");
+                }
+            }
+        })
+    });
+})()

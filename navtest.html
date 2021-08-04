@@ -1,128 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+<html lang="en"><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="script.js"></script>
 </head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">-->
 <!--
 <nav class="navbar is-light is-fixed-top" id="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-menu is-active">
-        <div class="navbar-start"><a class="navbar-item" href="https://vitusverden.github.io">Hjem</a></div>
-        <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link">Vitus\' random stuff</a>
-            <div class="navbar-dropdown navbar-item"><a class="navbar-item"
-                    href="https://vitusverden.github.io/citater">Citatlisten</a><a class="navbar-item"
-                    href="https://vitusverden.github.io/minmaxing-spil">Minmaxing spil</a><a class="navbar-item"
-                    href="https://vitusverden.github.io/mcmaterialer">Antal til mc stacks</a><a class="navbar-item"
-                    href="https://vitusverden.github.io/primefactoring">Primtalsfaktorisering</a><a class="navbar-item"
-                    href="https://vitusverden.github.io/emilsnavn">Hvad hedder Emil i dag?</a>
-            </div>
-        </div>
-        <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link">Vitus\' rollespils stuff</a>
-            <div class="navbar-dropdown"><a class="navbar-item" href="https://vitusverden.github.io/erderrollespil">Er
-                    der rollespil idag?</a><a class="navbar-item" href="https://vitusverden.github.io/wfrpcareers">WFRP
-                    Career system</a><a class="navbar-item"
-                    href="https://vitusverden.github.io/rollespilsperception">Slå perception i
-                    WFRP nemt</a><a class="navbar-item" href="https://vitusverden.github.io/odds">WFRP magi odds</a>
-            </div>
-        </div>
-    </div>
-    <div class="navbar-end">
-        <div class="navbar-item">
-            <div class="buttons"><a id="themeknap" class="button is-light" onclick="fliptheme()">Dark theme</a>
-            </div>
-        </div>
-    </div>
-
-</nav><br>-->
-
-<body>
-    <nav id="navbar" class="navbar is-light is-fixed-top role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://vitusverden.github.io">
-                Hjem
-            </a>
-            
-            <button class="button" id="themeknap" onclick="fliptheme()">Dark mode</button>
-            <a role="button" onclick="toggleNavbar()" id="navbar-burger" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
-              
-        </div>
-
-        <div id="navbar-menu" class="navbar-menu">
-            <div class="navbar-start">
-
-
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        Vitus\' random stuff
-                    </a>
-
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item" href="https://vitusverden.github.io/citater">Citatlisten</a>
-                        <a class="navbar-item" href="https://vitusverden.github.io/minmaxing-spil">Minmaxing spil</a>
-                        <a class="navbar-item" href="https://vitusverden.github.io/mcmaterialer">Antal til mc stacks</a>
-                        <a class="navbar-item" href="https://vitusverden.github.io/primefactoring">Primtalsfaktorisering</a>
-                        <a class="navbar-item" href="https://vitusverden.github.io/emilsnavn">Hvad hedder Emil i dag?</a>
-                    </div>
-                </div>
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        Vitus\' rollespils stuff
-                    </a>
-
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item" href="https://vitusverden.github.io/erderrollespil">Er der rollespil idag?</a>
-                        <a class="navbar-item" href="https://vitusverden.github.io/wfrpcareers">WFRP Career system</a>
-                        <a class="navbar-item" href="https://vitusverden.github.io/rollespilsperception">Slå perception i WFRP nemt</a>
-                        <a class="navbar-item" href="https://vitusverden.github.io/odds">WFRP magi odds</a>
-                    </div>
-                </div>
-
-                
-            </div>
-            
-
-        </div>
-        
-        
-    </nav><br>
-</body>
-
-<body style="padding-top:5%; class="has-navbar-fixed-top">
-    Hej
-
-    <br>
-    <br>
-    <br>
-
-    t
-    <br>
-    <br>
-    <br><br>
-    <br>
-    <br><br>
-    <br>
-    <br><br>
-    <br>
-    <br><br>
-    <br>
-    <br><br>
-    <br>
-    <br><br>
-    <br>
-    <br><br>
-    <br>
-    <br><br>
-    <br>
-    <br>
-    heeej
-</body>
-
-</html>
+	<div class="navbar-menu is-active">
+		<div class="navbar-start"><a class="navbar-item" href="https://vitusverden.github.io">Hjem</a></div>
+		<div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link">Vitus\' random stuff</a>
+			<div class="navbar-dropdown navbar-item"><a class="navbar-item"
+					href="https://vitusverden.github.io/citater">Citatlisten</a><a class="navbar-item"
+					href="https://vitusverden.github.io/minmaxing-spil">Minmaxing spil</a><a class="navbar-item"
+					href="https://vitusverden.github.io/mcmaterialer">Antal til mc stacks</a><a class="navbar-item"
+					href="https://vitusverden.github.io/primefactoring">Primtalsfaktorisering</a><a class="navbar-item"
+					href="https://vitusverden.github.io/emilsnavn">Hvad hedder Emil i dag?</a>
+			</div>
+		</div>
+		<div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link">Vitus\' rollespils stuff</a>
+			<div class="navbar-dropdown"><a class="navbar-item" href="https://vitusverden.github.io/erderrollespil">Er
+					der rollespil idag?</a><a class="navbar-item" href="https://vitusverden.github.io/wfrpcareers">WFRP
+					Career system</a><a class="navbar-item"
+					href="https://vitusverden.github.io/rollespilsperception">Slå perception i
+					WFRP nemt</a><a class="navbar-item" href="https://vitusverden.github.io/odds">WFRP magi odds</a>
+			</div>
+		</div>
+	</div>
+	<div class="navbar-end">
+		<div class="navbar-item">
+			<div class="buttons"><a id="themeknap" class="button is-light" onclick="fliptheme()">Dark theme</a>
+			</div>
+		</div>
+	</div></nav><br>--><body class="has-navbar-fixed-top">
+	<header>
+		<nav id="navbar" class="navbar" role="navigation">
+			<a role="button" id="mobile-navbar-toggle" aria-label="menu" aria-expanded="false">
+				Vis navigation
+			  </a>
+			  
+			<div id="navbar-content">
+				<a href="https://vitusverden.github.io">
+					Hjem
+				</a>
+				<a role="button" style="cursor:pointer" id="darkModeSwitch">Dark mode</a>
+				<a href="https://vitusverden.github.io/citater">Citatlisten</a>
+				<div class="dropdown">
+					<button id="dropbtn1" class="dropbtn">Random stuff &#9660;
+					</button>
+					<div id="dropcontent1" class="dropdown-content">
+						<a href="https://vitusverden.github.io/minmaxing-spil">Minmaxing spil</a>
+						<a href="https://vitusverden.github.io/mcmaterialer">Antal til mc stacks</a>
+						<a href="https://vitusverden.github.io/primefactoring">Primtalsfaktorisering</a>
+						<a href="https://vitusverden.github.io/emilsnavn">Hvad hedder Emil i dag?</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button id="dropbtn2" class="dropbtn">Rollespil &#9660;
+					</button>
+					<div id="dropcontent2" class="dropdown-content">
+						<a href="https://vitusverden.github.io/erderrollespil">Er der rollespil idag?</a>
+						<a href="https://vitusverden.github.io/wfrpcareers">WFRP Career system</a>
+						<a href="https://vitusverden.github.io/rollespilsperception">Slå perception i WFRP nemt</a>
+						<a href="https://vitusverden.github.io/odds">WFRP magi odds</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>Hej        
+		<br>
+		<br>
+		<br>        t
+		<br>
+		<br>
+		<br><br>
+		<br>
+		<br><br>
+		<br>
+		<br><br>
+		<br>
+		<br><br>
+		<br>
+		<br><br>
+		<br>
+		<br><br>
+		<br>
+		<br><br>
+		<br>
+		<br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br>
+		heeej
+	</main>
+</body></html>
