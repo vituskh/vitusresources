@@ -2,7 +2,7 @@
 var theme = "light";
 
 (function () {
-    const style = false ? "./style.css" : "https://vitusverden.github.io/vitusresources/style.css" //true for dev, false 
+    const style = false ? "./style.css" : "https://vituskh.github.io/vitusresources/style.css" //true for dev, false ellers
 
     //Load CSS
     var head = document.getElementsByTagName("HEAD")[0]
@@ -23,29 +23,29 @@ var theme = "light";
           </a>
           
         <div id="vitusNav_navbar-content">
-            <a href="https://vitusverden.github.io">
+            <a href="https://vituskh.github.io">
                 Hjem
             </a>
             <a role="button" style="cursor:pointer" id="vitusNav_darkModeSwitch">Dark mode</a>
-            <a href="https://vitusverden.github.io/citater">Citatlisten</a>
+            <a href="https://vituskh.github.io/citater">Citatlisten</a>
             <div class="vitusNav_dropdown">
                 <button id="vitusNav_dropbtn1" class="vitusNav_dropbtn">Random stuff &#9660;
                 </button>
                 <div id="vitusNav_dropcontent1" class="vitusNav_dropdown-content">
-                    <a href="https://vitusverden.github.io/minmaxing-spil">Minmaxing spil</a>
-                    <a href="https://vitusverden.github.io/mcmaterialer">Antal til mc stacks</a>
-                    <a href="https://vitusverden.github.io/primefactoring">Primtalsfaktorisering</a>
-                    <a href="https://vitusverden.github.io/emilsnavn">Hvad hedder Emil i dag?</a>
+                    <a href="https://vituskh.github.io/minmaxing-spil">Minmaxing spil</a>
+                    <a href="https://vituskh.github.io/mcmaterialer">Antal til mc stacks</a>
+                    <a href="https://vituskh.github.io/primefactoring">Primtalsfaktorisering</a>
+                    <a href="https://vituskh.github.io/emilsnavn">Hvad hedder Emil i dag?</a>
                 </div>
             </div>
             <div class="vitusNav_dropdown">
                 <button id="vitusNav_dropbtn2" class="vitusNav_dropbtn">Rollespil &#9660;
                 </button>
                 <div id="vitusNav_dropcontent2" class="vitusNav_dropdown-content">
-                    <a href="https://vitusverden.github.io/erderrollespil">Er der rollespil idag?</a>
-                    <a href="https://vitusverden.github.io/wfrpcareers">WFRP Career system</a>
-                    <a href="https://vitusverden.github.io/rollespilsperception">Slå perception i WFRP nemt</a>
-                    <a href="https://vitusverden.github.io/odds">WFRP magi odds</a>
+                    <a href="https://vituskh.github.io/erderrollespil">Er der rollespil idag?</a>
+                    <a href="https://vituskh.github.io/wfrpcareers">WFRP Career system</a>
+                    <a href="https://vituskh.github.io/rollespilsperception">Slå perception i WFRP nemt</a>
+                    <a href="https://vituskh.github.io/odds">WFRP magi odds</a>
                 </div>
             </div>
         </div>
