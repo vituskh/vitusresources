@@ -44,6 +44,7 @@ var theme = "light";
                 <div id="vitusNav_dropcontent2" class="vitusNav_dropdown-content">
                     <a href="https://vituskh.github.io/erderrollespil">Er der rollespil idag?</a>
                     <a href="https://vituskh.github.io/wfrpcareers">WFRP Career system</a>
+                    <a href="https://vituskh.github.io/wfrp-skills-talents">WFRP Skills & Talents</a>
                     <a href="https://vituskh.github.io/rollespilsperception">Slå perception i WFRP nemt</a>
                     <a href="https://vituskh.github.io/odds">WFRP magi odds</a>
                 </div>
